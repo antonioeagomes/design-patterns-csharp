@@ -7,12 +7,12 @@ namespace abstract_factory.ConcreteFactories
     {
         public override Guincho CriarGuincho()
         {
-            throw new System.NotImplementedException();
+            return new GuinchoCreator().Criar(Porte.Grande);
         }
 
         public override Veiculo CriarVeiculo(string nome, Porte porte)
         {
-            throw new System.NotImplementedException();
+            return new VeiculoCreator().Criar(nome, porte);
         }
     }
 }

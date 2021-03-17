@@ -1,4 +1,6 @@
 ﻿using System;
+using abstract_factory.AbstractProducts;
+using abstract_factory.ConcreteProducts;
 
 namespace abstract_factory
 {
@@ -13,6 +15,16 @@ namespace abstract_factory
             ConcreteFactories.AmericaConcreteFactory america = new ConcreteFactories.AmericaConcreteFactory();
             animalWorld = new Clients.AnimalWorldClient(america);
             animalWorld.RunFoodChain();
+
+            Clients.RealWorld.CriarAutoSocorro(new VeiculoCreator()
+                .Criar("Etios", Porte.Pequeno))
+                .SocorrerVeiculos();
+            Clients.RealWorld.CriarAutoSocorro(new VeiculoCreator()
+                .Criar("Corolla", Porte.Medio))
+                .SocorrerVeiculos();
+            Clients.RealWorld.CriarAutoSocorro(new VeiculoCreator()
+                .Criar("Hilux", Porte.Grande))
+                .SocorrerVeiculos();
         }
     }
 

@@ -6,13 +6,13 @@ namespace abstract_factory.ConcreteFactories
     public class SocorroVeiculoMedioFactory : AutoSocorroFactory
     {
         public override Guincho CriarGuincho()
-        {
-            throw new System.NotImplementedException();
+        { 
+            return new GuinchoCreator().Criar(Porte.Medio);
         }
 
         public override Veiculo CriarVeiculo(string nome, Porte porte)
         {
-            throw new System.NotImplementedException();
+            return new VeiculoCreator().Criar(nome, porte);
         }
     }
 }

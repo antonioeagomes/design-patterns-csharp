@@ -5,8 +5,14 @@ namespace abstract_factory.ConcreteFactories
 {
     public class SocorroVeiculoPequenoFactory : AutoSocorroFactory
     {
-        public override Guincho CriarGuincho() => new GuinchoCreator().Criar(Porte.Pequeno);
+        public override Guincho CriarGuincho()
+        { 
+            return new GuinchoCreator().Criar(Porte.Pequeno);
+        }
 
-        public override Veiculo CriarVeiculo(string nome, Porte porte) => new VeiculoCreator().Criar(nome, porte);
+        public override Veiculo CriarVeiculo(string nome, Porte porte)
+        {
+            return new VeiculoCreator().Criar(nome, porte);
+        }
     }
 }
